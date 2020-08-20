@@ -13,10 +13,8 @@ $(document).ready(function () {
                 format: 'jsonp'
             },
             success: function (response) {
-                //console.log(response);
                 quote = response.quoteText;
                 author = response.quoteAuthor;
-                // console.log(quote, author);
                 $('#quote').text(`" ${quote}"`);
                 if (author) {
                     $('#author').text(`- ${author} -`);
@@ -28,13 +26,13 @@ $(document).ready(function () {
     }
     getNewQuote();
 
-    $('.get-quote').on('click', function (event) {
-        event.preventDefault(); // to make the browser "not" jump to the top
+    $('.get-quote').on('click', function (e) {
+        e.preventDefault();
         getNewQuote();
     });
 
-    $('.share-quote').on('click', function (event) {
-        event.preventDefault();
+    $('.share-quote').on('click', function (e) {
+        e.preventDefault();
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${quote}- ${author} -`))
     });
 
