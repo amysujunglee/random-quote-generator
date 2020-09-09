@@ -1,2 +1,2 @@
 # random-quote-generator
-A ransom quote generator app using JavaScript and jQuery.
+A ransom quote generator app displaying 3rd party's quote API data.
