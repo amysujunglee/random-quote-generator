@@ -13,10 +13,8 @@ $(document).ready(function () {
                 format: 'jsonp'
             },
             success: function (response) {
-                //console.log(response);
                 quote = response.quoteText;
                 author = response.quoteAuthor;
-                // console.log(quote, author);
                 $('#quote').text(`" ${quote}"`);
                 if (author) {
                     $('#author').text(`- ${author} -`);
@@ -37,5 +35,4 @@ $(document).ready(function () {
         event.preventDefault();
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${quote}- ${author} -`))
     });
-
 });
