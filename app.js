@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     function getNewQuote() {
         $.ajax({
-            url: 'http://api.forismatic.com/api/1.0/',
+            url: '//api.forismatic.com/api/1.0/',
             jsonp: 'jsonp',
             dataType: 'jsonp',
             data: {
@@ -26,13 +26,13 @@ $(document).ready(function () {
     }
     getNewQuote();
 
-    $('.get-quote').on('click', function (event) {
-        event.preventDefault(); // to make the browser "not" jump to the top
+    $('.get-quote').on('click', function (e) {
+        e.preventDefault();
         getNewQuote();
     });
 
-    $('.share-quote').on('click', function (event) {
-        event.preventDefault();
+    $('.share-quote').on('click', function (e) {
+        e.preventDefault();
         window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(`${quote}- ${author} -`))
     });
 });
