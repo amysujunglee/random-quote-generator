@@ -6,6 +6,5 @@ A random quote generator app displaying 3rd party's quote API data.
 
 ## Methods
 - $.ajax({})
-- if statement
 - e.preventDefault()
 - window.open()
